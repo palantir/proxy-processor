@@ -1,0 +1,4 @@
+rootProject.name = 'proxy-processor-root'
+
+include 'proxy-annotations'
+include 'proxy-processor'

@@ -1,0 +1,15 @@
+package com.palantir.tritium.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.tritium.proxy.processor.ProxyAnnotationProcessor")
+public final class HasToStringProxy {
+    private HasToStringProxy() {
+    }
+
+    public static HasToString of(InvocationHandler handler) {
+        return (HasToString) Proxy.newProxyInstance(HasToStringProxy.class.getClassLoader(), new Class<?>[] {HasToString.class}, handler);
+    }
+}

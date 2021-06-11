@@ -1,0 +1,15 @@
+package com.palantir.tritium.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.tritium.proxy.processor.ProxyAnnotationProcessor")
+public final class EmptyProxy {
+    private EmptyProxy() {
+    }
+
+    public static Empty of(InvocationHandler handler) {
+        return (Empty) Proxy.newProxyInstance(EmptyProxy.class.getClassLoader(), new Class<?>[] {Empty.class}, handler);
+    }
+}

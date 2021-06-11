@@ -1,0 +1,16 @@
+package com.palantir.tritium.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.tritium.proxy.processor.ProxyAnnotationProcessor")
+@Deprecated
+public final class DeprecatedInterfaceProxy {
+    private DeprecatedInterfaceProxy() {
+    }
+
+    public static DeprecatedInterface of(InvocationHandler handler) {
+        return (DeprecatedInterface) Proxy.newProxyInstance(DeprecatedInterfaceProxy.class.getClassLoader(), new Class<?>[] {DeprecatedInterface.class}, handler);
+    }
+}

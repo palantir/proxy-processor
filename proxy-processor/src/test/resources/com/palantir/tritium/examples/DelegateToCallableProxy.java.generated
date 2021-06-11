@@ -1,0 +1,16 @@
+package com.palantir.tritium.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.tritium.proxy.processor.ProxyAnnotationProcessor")
+public final class DelegateToCallableProxy {
+    private DelegateToCallableProxy() {
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> DelegateToCallable<T> of(InvocationHandler handler) {
+        return (DelegateToCallable<T>) Proxy.newProxyInstance(DelegateToCallableProxy.class.getClassLoader(), new Class<?>[] {DelegateToCallable.class}, handler);
+    }
+}

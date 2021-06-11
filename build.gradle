@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.palantir.gradle.externalpublish:gradle-external-publish-plugin:1.2.1'
+        classpath 'com.palantir.javaformat:gradle-palantir-java-format:1.1.0'
+        classpath 'com.palantir.gradle.consistentversions:gradle-consistent-versions:1.28.0'
+        classpath 'com.palantir.baseline:gradle-baseline-java:3.68.0'
+        classpath 'com.palantir.gradle.gitversion:gradle-git-version:0.12.3'
+    }
+}
+
+apply plugin: 'com.palantir.external-publish'
+apply plugin: 'com.palantir.baseline'
+apply plugin: 'com.palantir.baseline-circleci'
+apply plugin: 'com.palantir.git-version'
+apply plugin: 'com.palantir.consistent-versions'
+
+version System.env.CIRCLE_TAG ?: gitVersion()
+
+allprojects {
+    apply plugin: 'com.palantir.java-format'
+    version rootProject.version
+    group 'com.palantir.proxy.processor'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'com.palantir.baseline-class-uniqueness'
+
+    sourceCompatibility = 11
+    tasks.check.dependsOn(javadoc)
+}
