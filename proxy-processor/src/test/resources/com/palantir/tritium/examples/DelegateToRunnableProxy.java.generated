@@ -9,7 +9,7 @@ public final class DelegateToRunnableProxy {
     private DelegateToRunnableProxy() {
     }
 
-    public static DelegateToRunnable of(InvocationHandler handler) {
+    public static DelegateToRunnable create(InvocationHandler handler) {
         return (DelegateToRunnable) Proxy.newProxyInstance(DelegateToRunnableProxy.class.getClassLoader(), new Class<?>[] {DelegateToRunnable.class}, handler);
     }
 }

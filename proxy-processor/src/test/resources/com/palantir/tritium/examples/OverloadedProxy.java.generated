@@ -9,7 +9,7 @@ public final class OverloadedProxy {
     private OverloadedProxy() {
     }
 
-    public static Overloaded of(InvocationHandler handler) {
+    public static Overloaded create(InvocationHandler handler) {
         return (Overloaded) Proxy.newProxyInstance(OverloadedProxy.class.getClassLoader(), new Class<?>[] {Overloaded.class}, handler);
     }
 }

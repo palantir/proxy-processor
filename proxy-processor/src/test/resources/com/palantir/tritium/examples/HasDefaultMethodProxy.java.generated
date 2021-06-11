@@ -9,7 +9,7 @@ public final class HasDefaultMethodProxy {
     private HasDefaultMethodProxy() {
     }
 
-    public static HasDefaultMethod of(InvocationHandler handler) {
+    public static HasDefaultMethod create(InvocationHandler handler) {
         return (HasDefaultMethod) Proxy.newProxyInstance(HasDefaultMethodProxy.class.getClassLoader(), new Class<?>[] {HasDefaultMethod.class}, handler);
     }
 }

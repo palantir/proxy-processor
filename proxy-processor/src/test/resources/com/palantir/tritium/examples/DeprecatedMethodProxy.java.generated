@@ -9,7 +9,7 @@ public final class DeprecatedMethodProxy {
     private DeprecatedMethodProxy() {
     }
 
-    public static DeprecatedMethod of(InvocationHandler handler) {
+    public static DeprecatedMethod create(InvocationHandler handler) {
         return (DeprecatedMethod) Proxy.newProxyInstance(DeprecatedMethodProxy.class.getClassLoader(), new Class<?>[] {DeprecatedMethod.class}, handler);
     }
 }

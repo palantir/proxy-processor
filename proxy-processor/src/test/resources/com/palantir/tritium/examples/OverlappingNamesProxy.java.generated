@@ -9,7 +9,7 @@ public final class OverlappingNamesProxy {
     private OverlappingNamesProxy() {
     }
 
-    public static OverlappingNames of(InvocationHandler handler) {
+    public static OverlappingNames create(InvocationHandler handler) {
         return (OverlappingNames) Proxy.newProxyInstance(OverlappingNamesProxy.class.getClassLoader(), new Class<?>[] {OverlappingNames.class}, handler);
     }
 }

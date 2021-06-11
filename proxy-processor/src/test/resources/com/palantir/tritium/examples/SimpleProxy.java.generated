@@ -9,7 +9,7 @@ public final class SimpleProxy {
     private SimpleProxy() {
     }
 
-    public static Simple of(InvocationHandler handler) {
+    public static Simple create(InvocationHandler handler) {
         return (Simple) Proxy.newProxyInstance(SimpleProxy.class.getClassLoader(), new Class<?>[] {Simple.class}, handler);
     }
 }

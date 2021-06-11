@@ -9,7 +9,7 @@ public final class HasToStringProxy {
     private HasToStringProxy() {
     }
 
-    public static HasToString of(InvocationHandler handler) {
+    public static HasToString create(InvocationHandler handler) {
         return (HasToString) Proxy.newProxyInstance(HasToStringProxy.class.getClassLoader(), new Class<?>[] {HasToString.class}, handler);
     }
 }

@@ -22,9 +22,23 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Interfaces annotated with {@link Proxy} will result in a generated concrete implementation
- * using the same package, and name prefixed with {@code Proxied}.
+ * Annotating an interface with {@link Proxy} generate concrete utility class
+ * in the same package with the interface name suffixed with {@code Proxy}.
+ * <pre>{@code
+ * @Proxy
+ * interface MyService {}
+ *
+ * // Produces the 'MyServiceProxy' class:
+ * MyService proxyInstance = MyServiceProxy.create(new InvocationHandler() {
+ *     @Override
+ *     public Object invoke(Object proxy, Method method, Object[] args) {
+ *         System.out.printf("Invoked %s on %s\n", method, proxy);
+ *         return null;
+ *     }
+ * });
+ * }</pre>
  */
+@SuppressWarnings("InvalidBlockTag")
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.CLASS)
 public @interface Proxy {}

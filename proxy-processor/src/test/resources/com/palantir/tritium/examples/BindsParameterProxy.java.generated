@@ -9,7 +9,7 @@ public final class BindsParameterProxy {
     private BindsParameterProxy() {
     }
 
-    public static BindsParameter of(InvocationHandler handler) {
+    public static BindsParameter create(InvocationHandler handler) {
         return (BindsParameter) Proxy.newProxyInstance(BindsParameterProxy.class.getClassLoader(), new Class<?>[] {BindsParameter.class}, handler);
     }
 }

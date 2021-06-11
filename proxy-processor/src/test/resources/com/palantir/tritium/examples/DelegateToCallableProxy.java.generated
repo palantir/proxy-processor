@@ -10,7 +10,7 @@ public final class DelegateToCallableProxy {
     }
 
     @SuppressWarnings("unchecked")
-    public static <T> DelegateToCallable<T> of(InvocationHandler handler) {
+    public static <T> DelegateToCallable<T> create(InvocationHandler handler) {
         return (DelegateToCallable<T>) Proxy.newProxyInstance(DelegateToCallableProxy.class.getClassLoader(), new Class<?>[] {DelegateToCallable.class}, handler);
     }
 }

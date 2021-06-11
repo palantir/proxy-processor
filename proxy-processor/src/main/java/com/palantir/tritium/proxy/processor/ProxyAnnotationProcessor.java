@@ -117,7 +117,7 @@ public final class ProxyAnnotationProcessor extends AbstractProcessor {
                 .addMethod(MethodSpec.constructorBuilder()
                         .addModifiers(Modifier.PRIVATE)
                         .build())
-                .addMethod(MethodSpec.methodBuilder("of")
+                .addMethod(MethodSpec.methodBuilder("create")
                         .addTypeVariables(Lists.transform(typeElement.getTypeParameters(), TypeVariableName::get))
                         .addAnnotations(
                                 typeElement.getTypeParameters().isEmpty()

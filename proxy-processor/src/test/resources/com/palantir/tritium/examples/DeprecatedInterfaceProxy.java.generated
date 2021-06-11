@@ -10,7 +10,7 @@ public final class DeprecatedInterfaceProxy {
     private DeprecatedInterfaceProxy() {
     }
 
-    public static DeprecatedInterface of(InvocationHandler handler) {
+    public static DeprecatedInterface create(InvocationHandler handler) {
         return (DeprecatedInterface) Proxy.newProxyInstance(DeprecatedInterfaceProxy.class.getClassLoader(), new Class<?>[] {DeprecatedInterface.class}, handler);
     }
 }
