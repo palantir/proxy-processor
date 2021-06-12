@@ -1,1 +1,1 @@
-com.palantir.tritium.proxy.processor.ProxyAnnotationProcessor
+com.palantir.proxy.processor.ProxyAnnotationProcessor

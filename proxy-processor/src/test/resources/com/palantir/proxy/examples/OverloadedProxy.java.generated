@@ -1,0 +1,15 @@
+package com.palantir.proxy.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.proxy.processor.ProxyAnnotationProcessor")
+public final class OverloadedProxy {
+    private OverloadedProxy() {
+    }
+
+    public static Overloaded create(InvocationHandler handler) {
+        return (Overloaded) Proxy.newProxyInstance(OverloadedProxy.class.getClassLoader(), new Class<?>[] {Overloaded.class}, handler);
+    }
+}
