@@ -1,0 +1,5 @@
+type: break
+break:
+  description: remove tritium from package names
+  links:
+  - https://github.com/palantir/proxy-processor/pull/4
