@@ -1,0 +1,16 @@
+package com.palantir.proxy.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.proxy.processor.ProxyAnnotationProcessor")
+public final class ParameterizedProxy {
+    private ParameterizedProxy() {
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> Parameterized<T> create(InvocationHandler handler) {
+        return (Parameterized<T>) Proxy.newProxyInstance(ParameterizedProxy.class.getClassLoader(), new Class<?>[] {Parameterized.class}, handler);
+    }
+}

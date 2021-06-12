@@ -1,0 +1,15 @@
+package com.palantir.proxy.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.proxy.processor.ProxyAnnotationProcessor")
+public final class ExtendsMultipleInterfacesProxy {
+    private ExtendsMultipleInterfacesProxy() {
+    }
+
+    public static ExtendsMultipleInterfaces create(InvocationHandler handler) {
+        return (ExtendsMultipleInterfaces) Proxy.newProxyInstance(ExtendsMultipleInterfacesProxy.class.getClassLoader(), new Class<?>[] {ExtendsMultipleInterfaces.class}, handler);
+    }
+}

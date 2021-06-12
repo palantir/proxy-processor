@@ -1,0 +1,15 @@
+package com.palantir.proxy.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.proxy.processor.ProxyAnnotationProcessor")
+public final class HasDefaultMethodProxy {
+    private HasDefaultMethodProxy() {
+    }
+
+    public static HasDefaultMethod create(InvocationHandler handler) {
+        return (HasDefaultMethod) Proxy.newProxyInstance(HasDefaultMethodProxy.class.getClassLoader(), new Class<?>[] {HasDefaultMethod.class}, handler);
+    }
+}

@@ -1,0 +1,15 @@
+package com.palantir.proxy.examples;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
+import javax.annotation.processing.Generated;
+
+@Generated("com.palantir.proxy.processor.ProxyAnnotationProcessor")
+public final class DeprecatedMethodProxy {
+    private DeprecatedMethodProxy() {
+    }
+
+    public static DeprecatedMethod create(InvocationHandler handler) {
+        return (DeprecatedMethod) Proxy.newProxyInstance(DeprecatedMethodProxy.class.getClassLoader(), new Class<?>[] {DeprecatedMethod.class}, handler);
+    }
+}
