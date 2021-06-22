@@ -40,5 +40,5 @@ import java.lang.annotation.Target;
  */
 @SuppressWarnings("InvalidBlockTag")
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.SOURCE)
 public @interface Proxy {}
