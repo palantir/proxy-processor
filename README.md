@@ -26,6 +26,16 @@ MyInterface proxy = MyInterfaceProxy.create(new InvocationHandler() {
 });
 ```
 
+### Build Configuration
+
+Using gradle:
+```groovy
+dependencies {
+    compileOnly 'com.palantir.proxy.processor:proxy-annotations'
+    annotationProcessor 'com.palantir.proxy.processor:proxy-processor'
+}
+```
+
 Gradle Tasks
 ------------
 `./gradlew tasks` - to get the list of gradle tasks
