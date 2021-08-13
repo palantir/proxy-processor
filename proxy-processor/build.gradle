@@ -1,10 +1,10 @@
 apply plugin: 'com.palantir.external-publish-jar'
 
 dependencies {
-    compile project(':proxy-annotations')
+    api project(':proxy-annotations')
 
-    compile 'com.squareup:javapoet'
-    compile 'com.google.guava:guava'
+    api 'com.squareup:javapoet'
+    api 'com.google.guava:guava'
 
     testImplementation 'com.google.testing.compile:compile-testing'
     testImplementation 'com.google.guava:guava'
