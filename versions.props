@@ -1,5 +1,5 @@
 com.google.guava:guava = 31.0.1-jre
-org.junit.jupiter:* = 5.8.1
+org.junit.jupiter:* = 5.8.2
 org.assertj:assertj-core = 3.21.0
 com.google.testing.compile:compile-testing = 0.19
 com.squareup:javapoet = 1.13.0
