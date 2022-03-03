@@ -1,8 +1,8 @@
 # Run ./gradlew --write-locks to regenerate this file
 com.google.code.findbugs:jsr305:3.0.2 (1 constraints: 170aecb4)
-com.google.errorprone:error_prone_annotations:2.7.1 (2 constraints: 79147fa7)
+com.google.errorprone:error_prone_annotations:2.11.0 (2 constraints: a314ccb6)
 com.google.guava:failureaccess:1.0.1 (1 constraints: 140ae1b4)
-com.google.guava:guava:31.0.1-jre (4 constraints: 90348cc4)
+com.google.guava:guava:31.1-jre (4 constraints: 3234be88)
 com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava (1 constraints: bd17c918)
 com.google.j2objc:j2objc-annotations:1.3 (1 constraints: b809eda0)
 com.squareup:javapoet:1.13.0 (1 constraints: 3705323b)
