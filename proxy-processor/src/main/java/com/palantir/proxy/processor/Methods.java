@@ -37,8 +37,8 @@ final class Methods {
     static boolean isObjectMethod(Elements elements, ExecutableElement methodElement) {
         TypeElement object = elements.getTypeElement(Object.class.getName());
         for (Element element : object.getEnclosedElements()) {
-            if (element instanceof ExecutableElement) {
-                ExecutableElement executableElement = (ExecutableElement) element;
+            if (element instanceof ExecutableElement executableElement) {
+
                 if (elements.overrides(methodElement, executableElement, object)
                         || Objects.equals(methodElement, executableElement)) {
                     return true;
@@ -49,8 +49,8 @@ final class Methods {
     }
 
     static boolean isInstrumentable(Elements elements, Element element) {
-        if (element instanceof ExecutableElement) {
-            ExecutableElement executable = (ExecutableElement) element;
+        if (element instanceof ExecutableElement executable) {
+
             return !executable.getModifiers().contains(Modifier.PRIVATE)
                     && !executable.getModifiers().contains(Modifier.STATIC)
                     && !Methods.isObjectMethod(elements, executable);
@@ -71,6 +71,7 @@ final class Methods {
             String originalMethodFieldName = CaseFormat.LOWER_CAMEL
                     .converterTo(CaseFormat.UPPER_UNDERSCORE)
                     .convert(methodName);
+            @SuppressWarnings("for-rollout:Var")
             String methodFieldName = originalMethodFieldName;
             for (int i = 1; true; i++) {
                 String finalName = methodFieldName;
