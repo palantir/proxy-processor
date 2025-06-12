@@ -71,7 +71,6 @@ final class Methods {
             String originalMethodFieldName = CaseFormat.LOWER_CAMEL
                     .converterTo(CaseFormat.UPPER_UNDERSCORE)
                     .convert(methodName);
-            @SuppressWarnings("for-rollout:Var")
             String methodFieldName = originalMethodFieldName;
             for (int i = 1; true; i++) {
                 String finalName = methodFieldName;
