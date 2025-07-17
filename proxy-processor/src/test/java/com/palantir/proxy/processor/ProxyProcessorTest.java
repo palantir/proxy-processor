@@ -41,6 +41,7 @@ import com.palantir.proxy.examples.Parameterized;
 import com.palantir.proxy.examples.Simple;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UncheckedIOException;
 import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -145,7 +146,6 @@ public final class ProxyProcessorTest {
                         javaFileObject -> assertContentsMatch(javaFileObject, generatedClassFileRelativePath));
     }
 
-    @SuppressWarnings("for-rollout:PreferUncheckedIoException")
     private static Compilation compileTestClass(Path basePath, Class<?> clazz) {
         Path clazzPath = basePath.resolve(Paths.get(
                 Joiner.on("/").join(Splitter.on(".").split(clazz.getPackage().getName())),
@@ -156,11 +156,10 @@ public final class ProxyProcessorTest {
                     .withProcessors(new ProxyAnnotationProcessor())
                     .compile(JavaFileObjects.forResource(clazzPath.toUri().toURL()));
         } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
+            throw new UncheckedIOException(e);
         }
     }
 
-    @SuppressWarnings("for-rollout:PreferUncheckedIoException")
     private static void assertContentsMatch(JavaFileObject javaFileObject, String generatedClassFile) {
         try {
             Path output = RESOURCES_BASE_DIR.resolve(generatedClassFile + ".generated");
@@ -171,7 +170,7 @@ public final class ProxyProcessorTest {
             }
             assertThat(generatedContents).isEqualTo(readFromFile(output));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new UncheckedIOException(e);
         }
     }
 
