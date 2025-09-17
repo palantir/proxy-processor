@@ -1,4 +1,4 @@
-com.google.guava:guava = 33.4.8-jre
+com.google.guava:guava = 33.5.0-jre
 org.junit.jupiter:* = 5.13.4
 org.assertj:assertj-core = 3.27.4
 com.google.testing.compile:compile-testing = 0.23.0
