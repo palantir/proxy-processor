@@ -1,3 +1,7 @@
+<p align="right">
+<a href="https://autorelease.general.dmz.palantir.tech/palantir/proxy-processor"><img src="https://img.shields.io/badge/Perform%20an-Autorelease-success.svg" alt="Autorelease"></a>
+</p>
+
 proxy-processor
 ===============
 Annotation processor which provides typed proxy factories that are compatible with closed-world environments.
