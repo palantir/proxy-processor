@@ -1,10 +1,10 @@
 # Run ./gradlew writeVersionsLocks to regenerate this file. Blank lines are to minimize merge conflicts.
 
-com.google.errorprone:error_prone_annotations:2.47.0 (2 constraints: dd14e2cc)
+com.google.errorprone:error_prone_annotations:2.50.0 (2 constraints: d71411cc)
 
 com.google.guava:failureaccess:1.0.3 (1 constraints: 160ae3b4)
 
-com.google.guava:guava:33.6.0-jre (4 constraints: c53514d7)
+com.google.guava:guava:33.7.0-jre (4 constraints: c635a4d7)
 
 com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava (1 constraints: bd17c918)
 
@@ -12,7 +12,7 @@ com.google.j2objc:j2objc-annotations:3.1 (1 constraints: b809f1a0)
 
 com.squareup:javapoet:1.13.0 (1 constraints: 3705323b)
 
-org.jspecify:jspecify:1.0.0 (9 constraints: be8ca488)
+org.jspecify:jspecify:1.0.1 (9 constraints: bf8c178a)
 
 
 
