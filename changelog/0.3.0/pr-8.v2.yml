@@ -1,5 +1,0 @@
-type: improvement
-improvement:
-  description: Proxy annotation uses source retention
-  links:
-  - https://github.com/palantir/proxy-processor/pull/8
