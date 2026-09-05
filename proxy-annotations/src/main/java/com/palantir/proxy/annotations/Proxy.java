@@ -38,7 +38,6 @@ import java.lang.annotation.Target;
  * });
  * }</pre>
  */
-@SuppressWarnings("InvalidBlockTag")
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.SOURCE)
 public @interface Proxy {}

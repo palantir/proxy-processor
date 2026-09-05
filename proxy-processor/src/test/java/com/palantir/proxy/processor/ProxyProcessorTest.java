@@ -108,7 +108,7 @@ public final class ProxyProcessorTest {
     }
 
     @Test
-    @SuppressWarnings({"deprecation", "UnnecessarilyFullyQualified"}) // testing deprecation linting
+    @SuppressWarnings("deprecation") // testing deprecation linting
     public void testDeprecatedInterface() {
         assertTestFileCompileAndMatches(TEST_CLASSES_BASE_DIR, com.palantir.proxy.examples.DeprecatedInterface.class);
     }
